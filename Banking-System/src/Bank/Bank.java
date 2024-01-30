@@ -21,4 +21,8 @@ public class Bank {
         }
         return bankInstance;
     }
+
+    public void addAccount(Account account) {
+        accounts.add(account);
+    }
 }

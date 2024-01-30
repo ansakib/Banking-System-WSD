@@ -45,6 +45,14 @@ public class CurrentAccount implements Account {
         return balance;
     }
 
+    @Override
+    public void accountInfo() {
+        System.out.println("Name: " + name);
+        System.out.println("Account number: " + accountNumber);
+        System.out.println("Date created: " + dateCreated);
+        System.out.println("Balance: " + balance);
+    }
+
     private void setMinmToCreate(double minmToCreate) {
         this.minmToCreate = minmToCreate;
     }
