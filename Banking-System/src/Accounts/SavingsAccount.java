@@ -2,13 +2,13 @@ package Accounts;
 
 import java.util.Date;
 
-public class CurrentAccount implements Account {
+public class SavingsAccount implements Account {
     private String name, accountNumber;
     private Date dateCreated;
     private double balance, minmToCreate, minmToMaintain;
 
-    public CurrentAccount(String name, String accountNumber, double initialDeposit) {
-        setMinmToCreate(1000);
+    public SavingsAccount(String name, String accountNumber, double initialDeposit) {
+        setMinmToCreate(500);
         setMinmToMaintain(500);
         if (initialDeposit >= getMinmToCreate()) {
             this.name = name;
@@ -47,7 +47,7 @@ public class CurrentAccount implements Account {
 
     @Override
     public void accountInfo() {
-        System.out.println("Current Account: " + name + "-" + accountNumber + ", Balance: " + balance);
+        System.out.println("Savings Account: " + name + "-" + accountNumber + ", Balance: " + balance);
     }
 
     private void setMinmToCreate(double minmToCreate) {
