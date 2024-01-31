@@ -17,6 +17,7 @@ public class Main {
         System.out.println("7. Search for account");
         System.out.println("8. Exit");
         Scanner sc = new Scanner(System.in);
+        String accNo;
         while(true){
             System.out.print("Enter your choice: ");
             int choice = sc.nextInt();
@@ -36,15 +37,22 @@ public class Main {
                     break;
                 case 3:
                     System.out.println("Enter Account Number: ");
-                    String accountNumber1 = sc.next();
+                    accNo = sc.next();
                     System.out.println("Enter New Name: ");
                     String name1 = sc.next();
-                    bank.updateAccount(accountNumber1, name1);
+                    bank.updateAccount(accNo, name1);
                     break;
                 case 4:
                     System.out.println("Enter Account Number: ");
-                    String accountNumber2 = sc.next();
-                    bank.deleteAccount(accountNumber2);
+                    accNo = sc.next();
+                    bank.deleteAccount(accNo);
+                    break;
+                case 5:
+                    System.out.println("Enter Account Number: ");
+                    accNo = sc.next();
+                    System.out.println("Enter Amount: ");
+                    double amount = sc.nextDouble();
+                    bank.depositAmount(accNo, amount);
                     break;
                 case 7:
                     System.out.println("Enter Account Number: ");

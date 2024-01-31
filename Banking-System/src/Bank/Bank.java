@@ -68,4 +68,15 @@ public class Bank {
             System.out.println("Account not found");
         }
     }
+
+    public void depositAmount(String accountNumber, double amount) {
+        Account account = searchAccount(accountNumber);
+        if (account != null) {
+            account.deposit(amount);
+            account.accountInfo();
+        } else {
+            System.out.println("Account not found");
+        }
+    }
+
 }
