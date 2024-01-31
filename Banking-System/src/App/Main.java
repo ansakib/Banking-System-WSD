@@ -3,13 +3,42 @@ package App;
 import Accounts.*;
 import Bank.Bank;
 
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
         Bank bank = Bank.getInstance();
-        bank.addAccount("current", "Sakib", "1234567890", 1000);
-        bank.addAccount("current", "Rakib", "0987654321", 2000);
-        bank.addAccount("savings", "Rahim", "1234509876", 3000);
-        bank.addAccount("salary", "Karim", "6789054321", 4000);
-        bank.displayAccounts();
+        System.out.println("1. Create a new account");
+        System.out.println("2. Display all accounts");
+        System.out.println("3. Update an account");
+        System.out.println("4. Delete an account");
+        System.out.println("5. Deposit an amount into your account");
+        System.out.println("6. Withdraw an amount from your account");
+        System.out.println("7. Search for account");
+        System.out.println("8. Exit");
+        Scanner sc = new Scanner(System.in);
+        while(true){
+            System.out.print("Enter your choice: ");
+            int choice = sc.nextInt();
+            switch (choice){
+                case 1:
+                    System.out.println("Enter Account Type: current/savings/salary");
+                    String accountType = sc.next();
+                    System.out.println("Enter Name: ");
+                    String name = sc.next();
+                    String accountNumber = String.valueOf((int)(Math.random() * 1000000000));
+                    System.out.println("Enter Initial Deposit: ");
+                    double initialDeposit = sc.nextDouble();
+                    bank.addAccount(accountType, name, accountNumber, initialDeposit);
+                    break;
+                case 2:
+                    bank.displayAccounts();
+                    break;
+                case 8:
+                    System.exit(0);
+                    break;
+
+            }
+        }
     }
 }
