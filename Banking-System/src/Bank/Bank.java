@@ -6,6 +6,7 @@ import Accounts.Account;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Bank {
     private static Bank bankInstance;
@@ -40,8 +41,25 @@ public class Bank {
     public void updateAccount(String accountNumber, String name) {
         for (Account account : accounts) {
             if (account.getAccountNumber().equals(accountNumber)) {
-                account.accountInfo();
                 account.updateAccount(name);
+                System.out.println("Account updated!");
+                account.accountInfo();
+                break;
+            }
+        }
+        System.out.println("Account not found!");
+    }
+    public void deleteAccount(String accountNumber) {
+        for (Account account : accounts) {
+            if (account.getAccountNumber().equals(accountNumber)) {
+                account.accountInfo();
+                System.out.println("Are you sure you want to delete this account? (y/n)");
+                Scanner sc = new Scanner(System.in);
+                String choice = sc.next();
+                if (choice.toLowerCase().equals("y")) {
+                    accounts.remove(account);
+                    System.out.println("Account deleted successfully!");
+                }
                 break;
             }
         }

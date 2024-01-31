@@ -41,6 +41,11 @@ public class Main {
                     String name1 = sc.next();
                     bank.updateAccount(accountNumber1, name1);
                     break;
+                case 4:
+                    System.out.println("Enter Account Number: ");
+                    String accountNumber2 = sc.next();
+                    bank.deleteAccount(accountNumber2);
+                    break;
                 case 8:
                     System.exit(0);
                     break;
