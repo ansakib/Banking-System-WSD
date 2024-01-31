@@ -46,29 +46,26 @@ public class Bank {
     }
 
     public void updateAccount(String accountNumber, String name) {
-        for (Account account : accounts) {
-            if (account.getAccountNumber().equals(accountNumber)) {
-                account.updateAccount(name);
-                System.out.println("Account updated!");
-                account.accountInfo();
-                break;
-            }
+        Account account = searchAccount(accountNumber);
+        if (account != null) {
+            account.updateAccount(name);
+            account.accountInfo();
+        } else {
+            System.out.println("Account not found");
         }
-        System.out.println("Account not found!");
     }
     public void deleteAccount(String accountNumber) {
-        for (Account account : accounts) {
-            if (account.getAccountNumber().equals(accountNumber)) {
-                account.accountInfo();
-                System.out.println("Are you sure you want to delete this account? (y/n)");
-                Scanner sc = new Scanner(System.in);
-                String choice = sc.next();
-                if (choice.toLowerCase().equals("y")) {
-                    accounts.remove(account);
-                    System.out.println("Account deleted successfully!");
-                }
-                break;
+        Account account = searchAccount(accountNumber);
+        if (account != null) {
+            System.out.println("Are you sure you want to delete this account? (y/n)");
+            Scanner sc = new Scanner(System.in);
+            String choice = sc.next();
+            if (choice.toLowerCase().equals("y")) {
+                accounts.remove(account);
+                System.out.println("Account deleted successfully");
             }
+        } else {
+            System.out.println("Account not found");
         }
     }
 }
