@@ -36,4 +36,14 @@ public class Bank {
             account.accountInfo();
         }
     }
+
+    public void updateAccount(String accountNumber, String name) {
+        for (Account account : accounts) {
+            if (account.getAccountNumber().equals(accountNumber)) {
+                account.accountInfo();
+                account.updateAccount(name);
+                break;
+            }
+        }
+    }
 }

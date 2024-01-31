@@ -34,6 +34,13 @@ public class Main {
                 case 2:
                     bank.displayAccounts();
                     break;
+                case 3:
+                    System.out.println("Enter Account Number: ");
+                    String accountNumber1 = sc.next();
+                    System.out.println("Enter New Name: ");
+                    String name1 = sc.next();
+                    bank.updateAccount(accountNumber1, name1);
+                    break;
                 case 8:
                     System.exit(0);
                     break;

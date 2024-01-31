@@ -46,6 +46,11 @@ public class SalaryAccount implements Account {
     }
 
     @Override
+    public void updateAccount(String name) {
+        this.name = name;
+    }
+
+    @Override
     public void accountInfo() {
         System.out.println("Salary Account: " + name + "-" + accountNumber + ", Balance: " + balance);
     }
@@ -62,5 +67,8 @@ public class SalaryAccount implements Account {
     }
     private double getMinmToMaintain() {
         return minmToMaintain;
+    }
+    public String getAccountNumber() {
+        return accountNumber;
     }
 }
