@@ -27,8 +27,6 @@ public class Bank {
         Account newAccount = AccountFactory.createAccount(accountType, name, accountNumber, initialDeposit);
         if (newAccount != null) {
             accounts.add(newAccount);
-        } else {
-            System.out.println("Account type not supported!");
         }
     }
 

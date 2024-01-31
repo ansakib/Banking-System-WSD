@@ -5,14 +5,18 @@ import Accounts.*;
 // Factory pattern for creating accounts
 public class AccountFactory {
     public static Account createAccount(String accountType, String name, String accountNumber, double initialDeposit) {
+        Account newAccount = null;
         if (accountType.toLowerCase().equals("current")) {
-            return new CurrentAccount(name, accountNumber, initialDeposit);
+            newAccount =  new CurrentAccount(name, accountNumber, initialDeposit);
         } else if(accountType.toLowerCase().equals("savings")) {
-            return new SavingsAccount(name, accountNumber, initialDeposit);
+            newAccount =  new SavingsAccount(name, accountNumber, initialDeposit);
         } else if(accountType.toLowerCase().equals("salary")) {
-            return new SalaryAccount(name, accountNumber, initialDeposit);
-        } else {
+            newAccount = new SalaryAccount(name, accountNumber, initialDeposit);
+        }
+
+        if(newAccount.getAccountNumber() == null) {
             return null;
         }
+        return newAccount;
     }
 }
