@@ -46,6 +46,13 @@ public class Main {
                     String accountNumber2 = sc.next();
                     bank.deleteAccount(accountNumber2);
                     break;
+                case 7:
+                    System.out.println("Enter Account Number: ");
+                    String accountNumber3 = sc.next();
+                    Account acc = bank.searchAccount(accountNumber3);
+                    acc.accountInfo();
+                    break;
+
                 case 8:
                     System.exit(0);
                     break;

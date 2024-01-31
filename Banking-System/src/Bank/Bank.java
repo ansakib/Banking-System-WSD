@@ -38,6 +38,15 @@ public class Bank {
         }
     }
 
+    public Account searchAccount(String accountNumber) {
+        for (Account account : accounts) {
+            if (account.getAccountNumber().equals(accountNumber)) {
+                return account;
+            }
+        }
+        return null;
+    }
+
     public void updateAccount(String accountNumber, String name) {
         for (Account account : accounts) {
             if (account.getAccountNumber().equals(accountNumber)) {
