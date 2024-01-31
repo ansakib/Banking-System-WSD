@@ -57,6 +57,7 @@ public class Bank {
     public void deleteAccount(String accountNumber) {
         Account account = searchAccount(accountNumber);
         if (account != null) {
+            account.accountInfo();
             System.out.println("Are you sure you want to delete this account? (y/n)");
             Scanner sc = new Scanner(System.in);
             String choice = sc.next();
@@ -79,4 +80,13 @@ public class Bank {
         }
     }
 
+    public void withdrawAmount(String accountNumber, double amount) {
+        Account account = searchAccount(accountNumber);
+        if (account != null) {
+            account.withdraw(amount);
+            account.accountInfo();
+        } else {
+            System.out.println("Account not found");
+        }
+    }
 }

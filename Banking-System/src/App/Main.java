@@ -54,6 +54,13 @@ public class Main {
                     double amount = sc.nextDouble();
                     bank.depositAmount(accNo, amount);
                     break;
+                case 6:
+                    System.out.println("Enter Account Number: ");
+                    accNo = sc.next();
+                    System.out.println("Enter Amount: ");
+                    double amount1 = sc.nextDouble();
+                    bank.withdrawAmount(accNo, amount1);
+                    break;
                 case 7:
                     System.out.println("Enter Account Number: ");
                     String accountNumber3 = sc.next();
