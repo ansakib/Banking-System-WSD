@@ -23,6 +23,6 @@ public class Bank {
     }
 
     public void addAccount(Account account) {
-        accounts.add(account);
+        
     }
 }
