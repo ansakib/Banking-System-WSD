@@ -9,7 +9,9 @@ public class AccountFactory {
             return new CurrentAccount(name, accountNumber, initialDeposit);
         } else if(accountType.toLowerCase().equals("savings")) {
             return new SavingsAccount(name, accountNumber, initialDeposit);
-        }else {
+        } else if(accountType.toLowerCase().equals("salary")) {
+            return new SalaryAccount(name, accountNumber, initialDeposit);
+        } else {
             return null;
         }
     }
