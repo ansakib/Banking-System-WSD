@@ -22,7 +22,12 @@ public class Bank {
         return bankInstance;
     }
 
-    public void addAccount(Account account) {
-        
+    public void addAccount(String accountType, String name, String accountNumber, double initialDeposit) {
+        Account newAccount = AccountFactory.createAccount(accountType, name, accountNumber, initialDeposit);
+        if (newAccount != null) {
+            accounts.add(newAccount);
+        } else {
+            System.out.println("Account type not supported!");
+        }
     }
 }
