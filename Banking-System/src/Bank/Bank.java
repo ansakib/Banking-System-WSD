@@ -30,4 +30,10 @@ public class Bank {
             System.out.println("Account type not supported!");
         }
     }
+
+    public void displayAccounts() {
+        for (Account account : accounts) {
+            account.accountInfo();
+        }
+    }
 }
